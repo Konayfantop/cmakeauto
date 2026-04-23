@@ -17,12 +17,12 @@
 #define INFO " INFO] "
 #define DEBUG " DEBUG] "
 
-typedef enum
+enum Aspect
 {
     ASPECT_HELP = 1 << 0,
     ASPECT_BUILD = 1 << 1,
     ASPECT_CLEAN = 1 << 2,
     ASPECT_VERSION = 1 << 3
-} Aspect_t;
+};
 
 #endif

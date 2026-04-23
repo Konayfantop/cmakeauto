@@ -1,0 +1,2 @@
+purpose of this file is to actually check the process of tomlDecodingFile to find the proper .automake folder with the config
+file.

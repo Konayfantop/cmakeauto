@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <commandParser.h>
 #include <colorLogging.h>
+#include <tomlDecoding.h>
 
 int main(int argc, const char** argv)
 {
