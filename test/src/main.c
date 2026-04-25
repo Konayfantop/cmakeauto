@@ -10,10 +10,13 @@ void setUp(void)
 {
     originalPath = (char *)malloc(sizeof(char) * 5000);
     getcwd(originalPath, 1000);
+    printf("MOUNI_1 : %s\n", originalPath );
 }
 
 void tearDown(void)
 {
+    printf("MOUNI_2 : %s\n", originalPath );
+
     chdir(originalPath);
     free(originalPath);
 }
