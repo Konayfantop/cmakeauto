@@ -25,10 +25,14 @@ typedef struct unordered_map
 
 }unordered_mapT;
 
+unsigned long hash(const char *str);
 unordered_mapT* initUnorderedMap();
+unordered_mapT* initUnorderedMapByCapacity(const unsigned int capacity);
 bucketT* initializeNewNode(const char* const newKey, const char* const newValue);
-bucketT* insert(unordered_mapT* unordered_map, const char* const key, const char* const value);
+bucketT* insert(unordered_mapT** unordered_map, const char* const newKey, const char* const newValue);
 bucketT* find(unordered_mapT* const unordered_map, const char* const key);
 bool erase(unordered_mapT* unordered_map, const char* const key);
+void freeUnorderedMap(unordered_mapT* unordered_map);
+void debugMap(unordered_mapT* unordered_map);
 
 #endif
