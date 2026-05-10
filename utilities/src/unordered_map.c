@@ -278,7 +278,7 @@ void debugMap(unordered_mapT* unordered_map)
         bucketT* curr = unordered_map->buckets[i];
         while(curr != NULL)
         {
-            printf(" %s ", curr->key);
+            printf(" %s : %s ", curr->key, curr->value);
             curr = curr->next;
         }
         printf("\n");

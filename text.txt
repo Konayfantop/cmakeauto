@@ -1,0 +1,242 @@
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:49:test_tomlDecoding_findProperlyTheContentsOfThePathWhenFoldersExist:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:50:test_tomlDecoding_findProperlyTheContentsOfThePathWhenFilesExist:PASS
+[33m[AUTOMAKE WARNING] No config folder found, creating a default instead[0m
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:51:test_tomlDecoding_notAbleTofindTheAutomakeConfigFileDirPath:PASS
+[90m[AUTOMAKE DEBUG] Found the config file[0m
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:52:test_tomlDecoding_findTheAutomakeConfigFileDirPath:PASS
+KEY : name
+VALUE : automake
+KEY : version
+VALUE : 0.0.0
+KEY : language
+VALUE : C
+KEY : type
+VALUE : Debug
+KEY : standard
+VALUE : c11
+KEY : output
+VALUE : automake
+KEY : level
+VALUE : z
+KEY : lto
+VALUE : true
+KEY : warnings
+VALUE : all
+KEY : error
+VALUE : true
+KEY : syntax
+VALUE : false
+KEY : fatal
+VALUE : true
+KEY : doubleFloatConv
+VALUE : true
+KEY : shadow
+VALUE : local
+KEY : danglingPtr
+VALUE : true
+KEY : prefix
+VALUE : /usr/local
+KEY : bin
+VALUE : bin/
+KEY : logging
+VALUE : true
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:53:test_tomlDecoding_decodeSimpleToml:PASS
+KEY : name
+VALUE : automake
+KEY : version
+VALUE : 0.0.0
+KEY : language
+VALUE : C
+KEY : type
+VALUE : Debug
+KEY : standard
+VALUE : c11
+KEY : output
+VALUE : automake
+KEY : level
+VALUE : z
+KEY : lto
+VALUE : true
+KEY : warnings
+VALUE : all
+KEY : error
+VALUE : true
+KEY : syntax
+VALUE : false
+KEY : fatal
+VALUE : true
+KEY : doubleFloatConv
+VALUE : true
+KEY : shadow
+VALUE : local
+KEY : danglingPtr
+VALUE : true
+KEY : prefix
+VALUE : /usr/local
+KEY : bin
+VALUE : bin/
+KEY : logging
+VALUE : true
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:54:test_tomlDecoding_decodeTomlFullOfCommentsOnThePairs:PASS
+KEY : name
+VALUE : automake
+KEY : version
+VALUE : 0.0.0
+KEY : language
+VALUE : C
+KEY : type
+VALUE : Debug
+KEY : standard
+VALUE : c11
+KEY : output
+VALUE : automake
+KEY : level
+VALUE : z
+KEY : lto
+VALUE : true
+KEY : warnings
+VALUE : all
+KEY : error
+VALUE : true
+KEY : syntax
+VALUE : false
+KEY : fatal
+VALUE : true
+KEY : doubleFloatConv
+VALUE : true
+KEY : shadow
+VALUE : local
+KEY : danglingPtr
+VALUE : true
+KEY : prefix
+VALUE : /usr/local
+KEY : bin
+VALUE : bin/
+KEY : logging
+VALUE : true
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:55:test_tomlDecoding_decodeTomlFullOfCommentsWherever:PASS
+KEY : name
+VALUE : automake
+KEY : version
+VALUE : 0.0.0
+KEY : language
+VALUE : C
+KEY : type
+VALUE : Debug
+KEY : standard
+VALUE : c11
+KEY : output
+VALUE : automake
+KEY : level
+VALUE : z
+KEY : lto
+VALUE : true
+KEY : warnings
+VALUE : all
+KEY : error
+VALUE : true
+KEY : syntax
+VALUE : false
+KEY : fatal
+VALUE : true
+KEY : doubleFloatConv
+VALUE : true
+KEY : shadow
+VALUE : local
+KEY : danglingPtr
+VALUE : true
+KEY : prefix
+VALUE : /usr/local
+KEY : bin
+VALUE : bin/
+KEY : logging
+VALUE : true
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:56:test_tomlDecoding_decodeTomlFullOfCommentsWhereverButWithoutEmptyLineInTheEnd:PASS
+KEY : name
+VALUE : automake
+KEY : version
+VALUE : 0.0.0
+KEY : language
+VALUE : C
+KEY : type
+VALUE : Debug
+KEY : standard
+VALUE : c11
+KEY : output
+VALUE : automake
+KEY : level
+VALUE : z
+KEY : lto
+VALUE : true
+KEY : warnings
+VALUE : all
+KEY : error
+VALUE : true
+KEY : syntax
+VALUE : false
+KEY : fatal
+VALUE : true
+KEY : doubleFloatConv
+VALUE : true
+KEY : shadow
+VALUE : local
+KEY : danglingPtr
+VALUE : true
+KEY : prefix
+VALUE : /usr/local
+KEY : bin
+VALUE : bin/
+KEY : logging
+VALUE : true
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:57:test_tomlDecoding_decodeTomlFullOfCommentsButWithHeaderInTheEndWithoutValues:PASS
+KEY : name
+VALUE : automake
+KEY : version
+VALUE : 0.0.0
+KEY : language
+VALUE : C
+KEY : type
+VALUE : Debug
+KEY : standard
+VALUE : c11
+KEY : output
+VALUE : automake
+KEY : level
+VALUE : z
+KEY : lto
+VALUE : true
+KEY : warnings
+VALUE : 
+KEY : error
+VALUE : true
+KEY : syntax
+VALUE : false
+KEY : fatal
+VALUE : true
+KEY : doubleFloatConv
+VALUE : true
+KEY : shadow
+VALUE : local
+KEY : danglingPtr
+VALUE : 
+KEY : prefix
+VALUE : /usr/local
+KEY : bin
+VALUE : bin/
+KEY : logging
+VALUE : true
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:58:test_tomlDecoding_decodeTomlsimpleInputButKeysWithoutValue:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:60:test_unorderedMap_initiateProperlyMap:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:61:test_unorderedMap_initializeNewNode:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:62:test_unorderedMap_simpleHashCheck:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:63:test_unorderedMap_insertPair:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:64:test_unorderedMap_insertAlreadyKeyToOverwriteValue:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:65:test_unorderedMap_insertPairsToTriggerResize:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:66:test_unorderedMap_insertPairsToTriggerMoreCollisionsOnRehashing:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:67:test_unorderedMap_insertPairsToTriggerMoreCollisionsOnRehashingCheckStructure:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:68:test_unordered_map_testFindNodesExistingOrNot:PASS
+/home/kostas/Documents/projects/CMakeAuto/test/src/main.c:69:test_unordered_map_testEraseNodesExistingOrNot:PASS
+
+-----------------------
+20 Tests 0 Failures 0 Ignored 
+OK

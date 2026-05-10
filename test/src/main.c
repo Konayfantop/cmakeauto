@@ -23,6 +23,12 @@ void test_tomlDecoding_findProperlyTheContentsOfThePathWhenFoldersExist(void);
 void test_tomlDecoding_findProperlyTheContentsOfThePathWhenFilesExist(void);
 void test_tomlDecoding_notAbleTofindTheAutomakeConfigFileDirPath(void);
 void test_tomlDecoding_findTheAutomakeConfigFileDirPath(void);
+void test_tomlDecoding_decodeSimpleToml(void);
+void test_tomlDecoding_decodeTomlFullOfCommentsOnThePairs(void);
+void test_tomlDecoding_decodeTomlFullOfCommentsWherever(void);
+void test_tomlDecoding_decodeTomlFullOfCommentsWhereverButWithoutEmptyLineInTheEnd(void);
+void test_tomlDecoding_decodeTomlFullOfCommentsButWithHeaderInTheEndWithoutValues(void);
+void test_tomlDecoding_decodeTomlsimpleInputButKeysWithoutValue(void);
 
 // unordered_map section
 void test_unorderedMap_initiateProperlyMap(void);
@@ -44,6 +50,12 @@ int main(void)
     RUN_TEST(test_tomlDecoding_findProperlyTheContentsOfThePathWhenFilesExist);
     RUN_TEST(test_tomlDecoding_notAbleTofindTheAutomakeConfigFileDirPath);
     RUN_TEST(test_tomlDecoding_findTheAutomakeConfigFileDirPath);
+    RUN_TEST(test_tomlDecoding_decodeSimpleToml);
+    RUN_TEST(test_tomlDecoding_decodeTomlFullOfCommentsOnThePairs);
+    RUN_TEST(test_tomlDecoding_decodeTomlFullOfCommentsWherever);
+    RUN_TEST(test_tomlDecoding_decodeTomlFullOfCommentsWhereverButWithoutEmptyLineInTheEnd);
+    RUN_TEST(test_tomlDecoding_decodeTomlFullOfCommentsButWithHeaderInTheEndWithoutValues);
+    RUN_TEST(test_tomlDecoding_decodeTomlsimpleInputButKeysWithoutValue);
 
     RUN_TEST(test_unorderedMap_initiateProperlyMap);
     RUN_TEST(test_unorderedMap_initializeNewNode);

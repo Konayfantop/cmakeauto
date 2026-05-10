@@ -1,12 +1,12 @@
 #include "tomlDecoding.h"
 
-#include "commonDecl.h"
-#include <colorLogging.h>
-
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+
+#include "commonDecl.h"
+#include <colorLogging.h>
 
 char* getDirPathContent()
 {
@@ -93,15 +93,114 @@ char* getConfigFilePath()
     return NULL;
 }
 
+void extractFields(unordered_mapT** unorderedMap, const char* const configDirPath)
+{
+    FILE* f = fopen(configDirPath, "rb");
+    if(f == NULL)
+    {
+        MAKE_ERROR("Not able to open the file, even though we managed to locate it");
+        return;
+    }
+
+    fseek(f, 0, SEEK_END);
+    long long fileSize = ftell(f);
+    rewind(f);
+    char* fileBuffer = (char *)malloc( (fileSize+1) * sizeof(char) );
+    char* toFreeLater = fileBuffer;
+
+    if(fileBuffer == NULL)
+    {
+        MAKE_ERROR("Not enough memory for buffer transfering of conf file data");
+        fclose(f);
+        return;
+    }
+    const size_t lastPos = fread(fileBuffer, 1, fileSize, f);
+    if(lastPos != (size_t)fileSize)
+    {
+        MAKE_ERROR("WARNING: partial read");
+    }
+    fileBuffer[lastPos] = '\0';
+    fclose(f);
+
+    while(*fileBuffer != '\0')
+    {
+        if(*fileBuffer == ' ' || *fileBuffer == '\n' || *fileBuffer == ']')
+        {
+            ++fileBuffer;
+        }
+        else if(*fileBuffer == '[')
+        {
+            while(*fileBuffer != ']')
+            {
+                ++fileBuffer;
+            }
+        }
+        else if(*fileBuffer == '#')
+        {
+            while(*fileBuffer != '\n' && *fileBuffer != '\0')
+            {
+                ++fileBuffer;
+            }
+        }
+        else if( (*fileBuffer >= 'a' && *fileBuffer <= 'z') || (*fileBuffer >= 'A' && *fileBuffer <= 'Z') )
+        {
+            char* keyCursor = fileBuffer;
+            while( (*keyCursor >= 'a' && *keyCursor <= 'z') || (*keyCursor >= 'A' && *keyCursor <= 'Z') ) // when ' ' or '=' we stop
+            {
+                ++keyCursor;
+            }
+
+            char* startValueCursor = keyCursor;
+            while(*startValueCursor == ' ' || *startValueCursor == '=' || *startValueCursor == '\"')
+            {
+                ++startValueCursor;
+            }
+
+            char* endValueCursor = startValueCursor;
+            while(*endValueCursor != '\"' && *endValueCursor != '\n')
+            {
+                ++endValueCursor;
+            }
+
+            const size_t keyLength = keyCursor-fileBuffer;
+            const size_t valueLength = endValueCursor-startValueCursor;
+
+            char* key = (char *)malloc((keyLength+1) * sizeof(char));
+            char* value = (char *)malloc((valueLength+1) * sizeof(char));
+            
+            memcpy(key, fileBuffer, keyCursor-fileBuffer+1);
+            key[keyLength] = '\0';
+            memcpy(value, startValueCursor, endValueCursor-startValueCursor+1);
+            value[valueLength] = '\0';
+
+            insert(unorderedMap, key, value);
+
+            fileBuffer = endValueCursor+1;
+        }
+    }
+
+    free(toFreeLater);
+}
+
 unsigned int parseTomlIfExists()
 {
-    const char* configDirPath = getConfigFilePath();
+    char* configDirPath = getConfigFilePath();
     if(configDirPath == NULL)
     {
         return 0;
     }
 
-    
+    unordered_mapT* unorderedMap = initUnorderedMap();
+    if(unorderedMap == NULL)
+    {
+        MAKE_ERROR("Memory problem occured during decoding / preparation. No config file is taken into account");
+        free(configDirPath);
+        return 0;
+    }
 
+    // reference of the unorderedMap in case of rehashing
+    extractFields(&unorderedMap, configDirPath);
+
+    free(configDirPath);
     return 1;
 }

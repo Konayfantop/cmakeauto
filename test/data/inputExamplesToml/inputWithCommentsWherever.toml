@@ -1,0 +1,35 @@
+#whatever
+[project]
+name = "automake"
+version = "0.0.0"
+language = "C"                      # C++ 
+
+# For the moment we keep it in debug mode
+[build]
+type = "Debug" # Debug / Release
+standard =              "c11" # c99, c11, c17, C++11, C++14, C++17
+output = "automake"                  # binary name, executable
+
+# Minimal optim # whatever
+[optimize]
+        level = "z" # optimization level of compilation, "default" for default optim, "1" for level, "2" for level, "3" for level, "0" for debugging, "z" for aggressive
+lto = "true" #  link time optimization
+
+[warning]
+#WHATEVER-WHENEVER
+
+warnings = "all" # can have values "no" or "" or the field omitted, "all", "extra", "pedantic"
+error = "true" # can treat the warnings as errors, activate or deactivate the usage by "on" or "off"
+syntax = "false" # can check the code for syntax errors, activate or deactivate the usage by "on" or "off"
+fatal = "true" # can abort the compilation from the first warning
+doubleFloatConv = "true" # warns of abnormal aka implicit conversion for both numerical types, activate or deactivate the usage by "on" or "off"
+shadow = "local" # warns of abnormal var shadowing, can trigger "local" or "global" ones.
+danglingPtr = "true" # warns of checks in if or in expr in general dangling pointers, can have "off", "on", "level1", "level2"
+
+[install]
+prefix = "/usr/local"
+bin = "bin/"
+
+[features]
+logging = "true" # the custom logging , will be enriched
+#WHATEVER-WHENEVER

@@ -1,0 +1,30 @@
+[project]
+name = "automake"
+version = "0.0.0"
+language = "C"
+
+[build]
+type = "Debug"
+standard = "c11"
+output = "automake"
+
+[optimize]
+level = "z"
+lto = "true"
+
+[warning]
+warnings = "all"
+error = "true"
+syntax = "false"
+fatal = "true"
+doubleFloatConv = "true"
+shadow = "local"
+danglingPtr = "true"
+
+[install]
+prefix = "/usr/local"
+bin = "bin/"
+
+[features]
+logging = "true"
+
